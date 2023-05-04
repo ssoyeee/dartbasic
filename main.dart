@@ -13,15 +13,32 @@
 //   return "Hi $name, you are $age, and you come from $country";
 // }
 
-String sayHello(String name, int age, [String? country = 'cuba']) =>
-    'Hello $name, you are $age years old from $country';
+// String sayHello(String name, int age, [String? country = 'cuba']) =>
+//     'Hello $name, you are $age years old from $country';
+
+//QQ Operator
+// String capitalizeName(String? name) => name?.toUpperCase() ?? 'ANON';
+
+//name != null ? name.toUpperCase() : 'ANON';
+//left ?? right --> means if left is null return right one, if left is not null, give you left one
+
+//typedef
+typedef ListOfInts = List<int>;
+
+List<int> reverseListOfNumbers(List<int> list) {
+  var reversed = list.reversed;
+  return reversed.toList();
+}
 
 void main() {
+  print(reverseListOfNumbers([1, 2, 3]));
+
   //named parameters
   //sayHi(age: 12, country: 'cititi', name: 'soyeon');
   //positional parameters
-  var results = sayHello('nico', 12);
-  print(results);
+  // var results = sayHello('nico', 12);
+  // print(results);
+
   //print(sayHi('soyeon'));
   // dynamic name; //avoid using dynamic, you can only use this when you need to
 
@@ -105,4 +122,13 @@ void main() {
   // numbers.add(1);
   // numbers.add(1);
   // print(numbers);
+
+  // capitalizeName('nico');
+  // capitalizeName(null);
+
+  // String? name;
+  // name ??= 'nico';
+  // name = null;
+  // name ??= 'another';
+  // print(name);
 }
