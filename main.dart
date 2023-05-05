@@ -1,54 +1,80 @@
-abstract class Human {
-  void walk();
+// abstract class Human {
+//   void walk();
+// }
+
+// enum Team { red, blue }
+
+// enum XPLevel { beginner, medium, pro }
+
+// class Player extends Human {
+//   String name;
+//   Team team;
+//   XPLevel xp;
+
+//   // Player.fromJson(Map<String, dynamic> playerJson)
+//   //     : name = playerJson['name'],
+//   //       xp = playerJson['xp'],
+//   //       team = playerJson['team'];
+
+//   Player(
+//       {required this.name,
+//       required this.xp,
+//       required this.team}); //position is improtant
+
+//   void walk() {
+//     print('I am walking');
+//   }
+
+//   // Player.createBluePlayer({required String name, required int age})
+//   //     : this.age = age,
+//   //       this.name = name,
+//   //       this.team = 'blue',
+//   //       this.xp = 0;
+
+//   // Player.createRedPlayer(String name, int age) //positional parameter
+//   //     : this.age = age,
+//   //       this.name = name,
+//   //       this.team = 'red',
+//   //       this.xp = 0;
+
+//   void sayHello() {
+//     print("Hello my name is $name, $xp");
+//   }
+// }
+
+// class Coach extends Human {
+//   void walk() {
+//     print('the coach is walking');
+//   }
+// }
+
+class Human {
+  final String name;
+  Human({required this.name});
+  void sayHello() {
+    print("Hi my name is $name");
+  }
 }
 
 enum Team { red, blue }
 
-enum XPLevel { beginner, medium, pro }
-
 class Player extends Human {
-  String name;
-  Team team;
-  XPLevel xp;
+  final Team team;
 
-  // Player.fromJson(Map<String, dynamic> playerJson)
-  //     : name = playerJson['name'],
-  //       xp = playerJson['xp'],
-  //       team = playerJson['team'];
+  Player({
+    required this.team,
+    required String name,
+  }) : super(name: name);
 
-  Player(
-      {required this.name,
-      required this.xp,
-      required this.team}); //position is improtant
-
-  void walk() {
-    print('I am walking');
-  }
-
-  // Player.createBluePlayer({required String name, required int age})
-  //     : this.age = age,
-  //       this.name = name,
-  //       this.team = 'blue',
-  //       this.xp = 0;
-
-  // Player.createRedPlayer(String name, int age) //positional parameter
-  //     : this.age = age,
-  //       this.name = name,
-  //       this.team = 'red',
-  //       this.xp = 0;
-
+  @override
   void sayHello() {
-    print("Hello my name is $name, $xp");
-  }
-}
-
-class Coach extends Human {
-  void walk() {
-    print('the coach is walking');
+    super.sayHello();
+    print('and I play for ${team}');
   }
 }
 
 void main() {
+  var player = Player(team: Team.red, name: 'so');
   // var player = Player.createBluePlayer(
   //   name: "soyeon",
   //   age: 21,
@@ -77,10 +103,10 @@ void main() {
   //   player.sayHello();
   // });
 
-  var soyeon = Player(name: 'soyeon', xp: XPLevel.medium, team: Team.blue);
-  var potato = soyeon
-    ..name = 'ast'
-    ..xp = XPLevel.beginner
-    ..team = Team.red
-    ..sayHello();
+//   var soyeon = Player(name: 'soyeon', xp: XPLevel.medium, team: Team.blue);
+//   var potato = soyeon
+//     ..name = 'ast'
+//     ..xp = XPLevel.beginner
+//     ..team = Team.red
+//     ..sayHello();
 }
