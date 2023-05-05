@@ -48,33 +48,57 @@
 //   }
 // }
 
-class Human {
-  final String name;
-  Human({required this.name});
-  void sayHello() {
-    print("Hi my name is $name");
+// class Human {
+//   final String name;
+//   Human({required this.name});
+//   void sayHello() {
+//     print("Hi my name is $name");
+//   }
+// }
+class Strong {
+  final double strengthLevel = 1500.99;
+}
+
+class QuickRunner {
+  void runQuick() {
+    print("ruuuun!");
   }
+}
+
+class Tall {
+  final double height = 1.99;
 }
 
 enum Team { red, blue }
 
-class Player extends Human {
+class Player with Strong, QuickRunner, Tall {
   final Team team;
 
   Player({
     required this.team,
-    required String name,
-  }) : super(name: name);
-
-  @override
-  void sayHello() {
-    super.sayHello();
-    print('and I play for ${team}');
-  }
+  });
 }
 
+class Horse with Strong, QuickRunner {}
+
+class Kid with QuickRunner {}
+// class Player extends Human {
+//   final Team team;
+
+//   Player({
+//     required this.team,
+//     required String name,
+//   }) : super(name: name);
+
+//   @override
+//   void sayHello() {
+//     super.sayHello();
+//     print('and I play for ${team}');
+//   }
+// }
+
 void main() {
-  var player = Player(team: Team.red, name: 'so');
+  var player = Player(team: Team.red);
   // var player = Player.createBluePlayer(
   //   name: "soyeon",
   //   age: 21,
