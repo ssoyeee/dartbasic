@@ -1,5 +1,5 @@
 # Dart Basic
-### Recap
+### Table of contents
 
 1. **Variables**: Var, Dynamic, Nullable, Final, Late, Constant
 2. **Data Types**: Lists, String Interpolation, Collection For, Maps, Sets
